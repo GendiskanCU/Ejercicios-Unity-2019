@@ -86,13 +86,30 @@ public class MyFirstScript : MonoBehaviour
         Character hero = new Character();
         hero.PrintCharacterStats();
 
+        Character hero2 = new Character();
+        hero2.PrintCharacterStats();
+
+        hero2 = hero;
+        hero2.name = "Other hero name";
+
+        hero.PrintCharacterStats();
+        hero2.PrintCharacterStats();
+
         Character heroine = new Character("Lara");
-        heroine.PrintCharacterStats();
+        heroine.PrintCharacterStats();       
+
+        Weapon sword = new Weapon("Espada roma", 5);
+
+        Weapon sword2 = sword;
+
+        sword.PrintWeaponStats();
+        sword2.PrintWeaponStats();
+
+        sword2.name = "Excalibur";
+        sword2.damage = 50;
+
+        sword.PrintWeaponStats();
+        sword2.PrintWeaponStats();
 
     }
-    
-    
-
-    
-
 }
