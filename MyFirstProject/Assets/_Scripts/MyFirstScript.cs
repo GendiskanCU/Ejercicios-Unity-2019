@@ -153,5 +153,6 @@ public class MyFirstScript : MonoBehaviour
         Transform t = myLight.GetComponent<Transform>();
         Debug.Log("La luz está posicionada en: " + t.position);
 
+
     }   
 }
