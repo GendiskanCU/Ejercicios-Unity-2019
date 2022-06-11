@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;//Capa a la que pertenece el suelo
     private CapsuleCollider _collider;//Collider del personaje
 
+    //Para el control del disparo
+    [SerializeField] private GameObject bullet;//Prefab de la bala
+    [SerializeField] private Transform shootPoint;//Punto de disparo
+    [SerializeField] private float bulletSpeed = 100f;//Velocidad de la bala
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +52,18 @@ public class PlayerController : MonoBehaviour
         
         hInput = Input.GetAxis("Horizontal") * currentRotateSpeed;
         vInput = Input.GetAxis("Vertical") * currentMoveSpeed;
+
+        //Disparo al pulsar el botón principal del ratón
+        if(Input.GetMouseButtonDown(0))
+        {
+            GameObject newBullet =
+                Instantiate(bullet, shootPoint.position, shootPoint.rotation)
+                as GameObject;
+            
+            Rigidbody bulletRb = newBullet.GetComponent<Rigidbody>();
+            bulletRb.velocity = shootPoint.forward * bulletSpeed;
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Space) && IsOnTheGround())//Si se pulsa Espacio, salta si está tocando la capa Ground
         {
