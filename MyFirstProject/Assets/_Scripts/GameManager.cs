@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +14,7 @@ public class GameManager : MonoBehaviour
     private int playerHP = 3;//Vida del player
 
     private bool showWinScreen;//Para saber cuándo se debe mostrar la pantalla de victoria
+    private bool showLossScreen;//Para saber cuándo se debe mostrar la pantalla de derrota
 
     public int HP//Propiedad para acceder a la vida del player
     {
@@ -26,6 +26,14 @@ public class GameManager : MonoBehaviour
                 playerHP = value;
             }
             Debug.LogFormat("Vidas: {0}", playerHP);
+            if(playerHP <= 0)//Cuando el personaje pierda todas las vidas
+            {
+                GameOver(false);
+            }
+            else
+            {
+                labelText = "¡Ay, me han dado!";
+            }
         }
 
     }
@@ -43,9 +51,7 @@ public class GameManager : MonoBehaviour
             Debug.LogFormat("Items: {0}", itemsCollected);
             if( itemsCollected >= maxItems)//Comprueba si se han recogido todos los ítems
             {
-                labelText = "¡Has encontrado todos los ítems!!!!";
-                Time.timeScale = 0f;
-                showWinScreen = true;
+                GameOver(true);
             }
             else
             {
@@ -53,6 +59,19 @@ public class GameManager : MonoBehaviour
                     " ítems.";
             }
         }
+    }
+
+
+    /// <summary>
+    /// Cambia las booleanas de victoria o derrota y detiene el tiempo
+    /// </summary>
+    /// <param name="gameWon">true si el jugador gana, false si pierde</param>
+    private void GameOver(bool gameWon)
+    {
+        labelText = gameWon ? "¡Has encontrado todos los ítems!!!!" : "Has muerto... Prueba otra vez";
+        showWinScreen = gameWon;
+        showLossScreen = !gameWon;
+        Time.timeScale = 0;
     }
 
 
@@ -67,11 +86,24 @@ public class GameManager : MonoBehaviour
 
         if(showWinScreen)//Cuando el jugador haya vencido
         {
-            if(GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 200), "¡HAS GANADO!!!!"))//Muestra el botón de victoria y si se pulsa en él
-            {
-                Time.timeScale = 1f;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//Recarga la escena actual
-            }
+            ShowEndLevel("¡¡¡ENHORABUENA, HAS VENCIDO!!!!");
+        }
+
+        if(showLossScreen)//Cuando el jugador haya perdido
+        {
+            ShowEndLevel("GAME OVER");
+        }
+    }
+
+    /// <summary>
+    /// Muestra el mensaje de final del nivel
+    /// </summary>
+    /// <param name="message"></param>
+    private void ShowEndLevel(string message)
+    {
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 200), message))//Muestra el botón de victoria/derrota y si se pulsa en él
+        {
+            Utilities.RestartLevel();//Usa la clase estática Utilities creada por nosotros
         }
     }
 

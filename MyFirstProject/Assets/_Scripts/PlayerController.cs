@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform shootPoint;//Punto de disparo
     [SerializeField] private float bulletSpeed = 100f;//Velocidad de la bala
 
+    //Para acceder al GameManager
+    private GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,8 @@ public class PlayerController : MonoBehaviour
         currentRotateSpeed = rotateSpeed;
 
         _collider = GetComponent<CapsuleCollider>();
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -106,5 +111,17 @@ public class PlayerController : MonoBehaviour
             distanceToGround, groundLayer, QueryTriggerInteraction.Ignore);
 
         return onTheGround;
+    }
+
+    /// <summary>
+    /// Si el jugador colisiona con un enemigo se le restará una vida
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            gameManager.HP--;
+        }
     }
 }
