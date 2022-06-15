@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
     //Para acceder al GameManager
     private GameManager gameManager;
 
+    //Ejemplo de un EVENTO, que se disparará cada vez que el player salte:
+    //Definición
+    public delegate void JumpEvent();//Declaro un delegado
+    public event JumpEvent playerJump;//Declaro un evento de salto
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +78,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsOnTheGround())//Si se pulsa Espacio, salta si está tocando la capa Ground
         {
             _rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+
+            playerJump();//Lanzamos el evento creado anteriormente como ejemplo de eventos
         }
 
         //Movimiento sin física

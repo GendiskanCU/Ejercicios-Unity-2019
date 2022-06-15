@@ -60,9 +60,14 @@
     <Compile Include="Assets\_Scripts\DestroyAfterTime.cs" />
     <Compile Include="Assets\_Scripts\EnemyBehaviour.cs" />
     <Compile Include="Assets\_Scripts\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\InterfaceManager.cs" />
     <Compile Include="Assets\_Scripts\ItemPickup.cs" />
     <Compile Include="Assets\_Scripts\PlayerController.cs" />
+    <Compile Include="Assets\_Scripts\Scripts repaso c sharp\BaseManager.cs" />
+    <Compile Include="Assets\_Scripts\Scripts repaso c sharp\BattleManager.cs" />
     <Compile Include="Assets\_Scripts\Scripts repaso c sharp\Character.cs" />
+    <Compile Include="Assets\_Scripts\Scripts repaso c sharp\CustomExtensions.cs" />
+    <Compile Include="Assets\_Scripts\Scripts repaso c sharp\Inventory.cs" />
     <Compile Include="Assets\_Scripts\Scripts repaso c sharp\MyFirstScript.cs" />
     <Compile Include="Assets\_Scripts\Scripts repaso c sharp\MySecondScript.cs" />
     <Compile Include="Assets\_Scripts\Utilities.cs" />
