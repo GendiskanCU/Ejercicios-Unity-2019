@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Para controlar cuántas instancias del jugador existen (también en el script DontDestroyOnLoad)
+    public static bool playerCreated;
+
     [SerializeField] private float speed = 5.0f;//Velocidad de movimiento
 
     private Rigidbody2D _rigidbody;
@@ -24,6 +27,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerCreated = true;//Se marca como creado
+
+
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
