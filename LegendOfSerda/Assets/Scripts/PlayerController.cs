@@ -22,7 +22,10 @@ public class PlayerController : MonoBehaviour
 
     //Para controlar las animaciones con el Blentree:
     private bool walking;
-    private Vector2 lastMovement = Vector2.zero;
+    public Vector2 lastMovement = Vector2.zero;//También se utilizará para saber a dónde mirará el personaje al cargar la escena
+
+    public string nextUuid;//Siguiente Start Point en el que deberá situarse cuando cargue la siguiente escena
+    
     
     // Start is called before the first frame update
     void Start()
