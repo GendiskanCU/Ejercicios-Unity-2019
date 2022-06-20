@@ -57,8 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\Scripts\EnemieController.cs" />
     <Compile Include="Assets\Scripts\GoToNewPlace.cs" />
+    <Compile Include="Assets\Scripts\HealthManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\StartPoint.cs" />
   </ItemGroup>
