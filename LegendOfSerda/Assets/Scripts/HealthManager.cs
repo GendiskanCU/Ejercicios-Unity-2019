@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Controlará la vida del player
+//Controlará la vida del personaje
 public class HealthManager : MonoBehaviour
 {
     public int maxHealth;//Vida máxima

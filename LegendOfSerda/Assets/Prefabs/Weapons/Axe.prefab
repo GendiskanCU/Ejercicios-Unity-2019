@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 3207334463574644324, guid: 86c6347e00560cf498deaf5c0f17061d,
+        type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}
       propertyPath: m_Size.x
@@ -81,17 +86,17 @@ PrefabInstance:
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.54593456
+      value: 0.6825801
       objectReference: {fileID: 0}
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.09657894
+      value: -0.096578956
       objectReference: {fileID: 0}
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.38046247
+      value: 0.44878525
       objectReference: {fileID: 0}
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}

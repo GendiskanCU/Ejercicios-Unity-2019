@@ -73,15 +73,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 3207334463574644324, guid: 86c6347e00560cf498deaf5c0f17061d,
+        type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.31027937
+      objectReference: {fileID: 0}
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.28749245
+      value: 0.44938838
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.034440804
       objectReference: {fileID: 0}
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.2748011
+      value: 0.35574907
       objectReference: {fileID: 0}
     - target: {fileID: 7345526895953506057, guid: 86c6347e00560cf498deaf5c0f17061d,
         type: 3}
