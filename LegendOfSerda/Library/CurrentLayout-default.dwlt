@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 2048
     height: 1019
-  m_MinSize: {x: 677, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 21
+  controlID: 22
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1508
     height: 1019
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 22
+  controlID: 23
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1508
     height: 619
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 23
+  controlID: 24
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 281
     height: 619
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 540
     height: 1019
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -396,9 +396,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2efbffff
-      m_LastClickedID: -1234
-      m_ExpandedIDs: 1afbffff5efbfffff4ffffff6c3c0000803c00008e3c0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 10fbffff5efbfffff4ffffff6c3c0000803c00008e3c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -595,6 +595,7 @@ MonoBehaviour:
     - {fileID: -4311885429175087998, guid: 65d247e11228ff84787d54125792de96, type: 2}
     - {fileID: 2057970279949525037, guid: 0030a8d479859174e871879ed92d7475, type: 2}
     - {fileID: 3030234619806152138, guid: 65d247e11228ff84787d54125792de96, type: 2}
+    - {fileID: -2725199987482432226, guid: 65d247e11228ff84787d54125792de96, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.7939063
       e01: 0
@@ -660,6 +661,22 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 94.25
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 167
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 9100000, guid: 65d247e11228ff84787d54125792de96,
     type: 2}
@@ -667,7 +684,7 @@ MonoBehaviour:
   - m_Target: {fileID: 934118739510090952, guid: 65d247e11228ff84787d54125792de96,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
-  - m_Target: {fileID: 3030234619806152138, guid: 65d247e11228ff84787d54125792de96,
+  - m_Target: {fileID: -2725199987482432226, guid: 65d247e11228ff84787d54125792de96,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -720,20 +737,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/character
+    - Assets/Animations/Player
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Sprites/character
+  - Assets/Animations/Player
   m_LastFoldersGridSize: 96
   m_LastProjectPath: E:\Proyectos Motores\Unity 2019\LegendOfSerda
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e4580000
-    m_LastClickedID: 22756
-    m_ExpandedIDs: 000000009c580000aa580000b2580000b858000000ca9a3b
+    m_SelectedIDs: 865b0000
+    m_LastClickedID: 23430
+    m_ExpandedIDs: 00000000bc580000ca58000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -761,7 +778,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009c580000
+    m_ExpandedIDs: 00000000bc580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
