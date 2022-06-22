@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 22
+  controlID: 91
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 23
+  controlID: 92
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,8 +211,8 @@ MonoBehaviour:
     y: 0
     width: 1227
     height: 619
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -396,9 +396,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 10fbffff5efbfffff4ffffff6c3c0000803c00008e3c0000
+      m_SelectedIDs: 30fbffff
+      m_LastClickedID: -1232
+      m_ExpandedIDs: bef1ffffd8f8ffff1cfbffff5efbffff6c3c0000803c00008e3c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -458,9 +458,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 14.635007, y: -6.3925314, z: -0.6144539}
+    m_Target: {x: 13.348874, y: -7.180664, z: -0.076687425}
     speed: 2
-    m_Value: {x: 14.635007, y: -6.3925314, z: -0.6144539}
+    m_Value: {x: 13.348874, y: -7.180664, z: -0.076687425}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -510,9 +510,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.5132074
+    m_Target: 1.2454964
     speed: 2
-    m_Value: 3.5132074
+    m_Value: 1.2454964
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -737,20 +737,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations/Player
+    - Assets/Sprites/Items
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Animations/Player
+  - Assets/Sprites/Items
   m_LastFoldersGridSize: 96
   m_LastProjectPath: E:\Proyectos Motores\Unity 2019\LegendOfSerda
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 865b0000
-    m_LastClickedID: 23430
-    m_ExpandedIDs: 00000000bc580000ca58000000ca9a3b
+    m_SelectedIDs: e4580000
+    m_LastClickedID: 22756
+    m_ExpandedIDs: 00000000ba580000c8580000d0580000d658000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -778,7 +778,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc580000
+    m_ExpandedIDs: 00000000ba580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -806,7 +806,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000fa3c0000fe3c0000023d0000a83c0000d6490000843c00006c3f0000763f00009e590000465800008258000086400000
+    m_ExpandedInstanceIDs: c6230000fa3c0000fe3c0000023d0000a83c0000d6490000843c00006c3f0000763f00009e590000465800008258000086400000ea580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
