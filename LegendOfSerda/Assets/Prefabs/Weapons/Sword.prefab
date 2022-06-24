@@ -124,7 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  bloodAnim: {fileID: 0}
+  bloodAnim: {fileID: 2991430478180592123, guid: e5553744fb6ef264dbed7b35dc4c0da7,
+    type: 3}
+  CanvasDamage: {fileID: 7363600964936464736, guid: a81701fdc9915734faaa060d608426ec,
+    type: 3}
 --- !u!1 &5612454532709700294
 GameObject:
   m_ObjectHideFlags: 0

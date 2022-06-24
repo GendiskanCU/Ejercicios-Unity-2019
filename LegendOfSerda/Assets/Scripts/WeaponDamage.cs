@@ -11,6 +11,8 @@ public class WeaponDamage : MonoBehaviour
 
     public GameObject bloodAnim;//Efecto de partículas de sangre al golpear a un enemigo
 
+    public GameObject CanvasDamage;//Canvas de texto que aparecerá informando del daño causado
+
     private GameObject hitPoint;//Punto de aparición del efecto de sangre
 
     private void Start()
@@ -21,13 +23,21 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag.Equals("Enemie"))//Si el arma choca con un enemigo le hará daño
+        if (collision.gameObject.tag.Equals("Enemie"))//Si el arma choca con un enemigo le hará daño
         {
             collision.gameObject.GetComponent<HealthManager>().DamageCharacter(damage);
 
+            //Mostrará un texto con el daño ocasionado
+            if (CanvasDamage != null && hitPoint != null)
+            {
+                GameObject clone = Instantiate(CanvasDamage, hitPoint.transform.position,
+                    Quaternion.identity);
+                clone.GetComponent<DamageNumber>().damagePoints = damage;
+            }
+
             //Y muestra el efecto de sangre, si se ha establecido alguno en la vista diseño
             //Y además el arma tiene establecido un punto de golpe
-            if(bloodAnim != null && hitPoint != null)
+            if (bloodAnim != null && hitPoint != null)
                 Instantiate(bloodAnim, hitPoint.transform.position, hitPoint.transform.rotation);
         }
     }
