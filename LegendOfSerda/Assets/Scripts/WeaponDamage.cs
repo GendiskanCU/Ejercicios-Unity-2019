@@ -7,7 +7,7 @@ using UnityEngine;
 public class WeaponDamage : MonoBehaviour
 {
     [Tooltip("Cantidad de daño que hace el arma")]
-    public int damage; //Daño del arma
+    public int damage; //Daño inicial del arma
 
     public GameObject bloodAnim;//Efecto de partículas de sangre al golpear a un enemigo
 
@@ -15,24 +15,39 @@ public class WeaponDamage : MonoBehaviour
 
     private GameObject hitPoint;//Punto de aparición del efecto de sangre
 
+    private CharacterStats stats;//Estadísticas del player, para conocer el nuevo daño que hará el arma al subir de nivel
+
     private void Start()
     {
         //Localiza el hitpoint dentro de sus hijos
         hitPoint = transform.Find("HitPoint").gameObject;
+
+        //Captura las estadísticas del player
+        stats = GameObject.Find("Player").GetComponent<CharacterStats>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Enemie"))//Si el arma choca con un enemigo le hará daño
         {
-            collision.gameObject.GetComponent<HealthManager>().DamageCharacter(damage);
+            //Actualiza el daño según el nivel actual del player
+            int totalDamage = damage + stats.strengLevels[stats.level];
+
+            //Según la probabilidad de que el ataque falle en función de la
+            //estadística del player el ataque puede quedarse en cero:
+            if (Random.Range(0, CharacterStats.MAX_STAT_VALUE) < stats.accuracyLevels[stats.level])
+            {
+                totalDamage = 0;
+            }
+
+            collision.gameObject.GetComponent<HealthManager>().DamageCharacter(totalDamage);
 
             //Mostrará un texto con el daño ocasionado
             if (CanvasDamage != null && hitPoint != null)
             {
                 GameObject clone = Instantiate(CanvasDamage, hitPoint.transform.position,
                     Quaternion.identity);
-                clone.GetComponent<DamageNumber>().damagePoints = damage;
+                clone.GetComponent<DamageNumber>().damagePoints = totalDamage;
             }
 
             //Y muestra el efecto de sangre, si se ha establecido alguno en la vista diseño

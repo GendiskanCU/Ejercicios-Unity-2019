@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     public string nextUuid;//Siguiente Start Point en el que deberá situarse cuando cargue la siguiente escena
 
-    public bool canMove = true;//Para permitir, o no, el movimiento del player
+    public bool canMove = true;//Para permitir, o no, el movimiento del player   
     
     
     // Start is called before the first frame update

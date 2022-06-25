@@ -6,9 +6,11 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
-    public int damage = 1;//Daño que hace el enemigo
+    public int damage = 1;//Daño inicial que hace el enemigo
 
     public GameObject CanvasDamage;//Canvas de texto que aparecerá informando del daño causado
+
+    private CharacterStats stats;//Estadísticas del player, para reducir el daño en función de su defensa actual (que depende de su nivel)
 
     /*
     public float timeToRevivePlayer;//Tiempo que tardará el player en revivir una vez muerto
@@ -18,16 +20,36 @@ public class DamagePlayer : MonoBehaviour
 
     private GameObject player;//Para capturar al player*/
 
+
+    private void Start()
+    {
+        //Captura las estadísticas del jugador
+        stats = GameObject.Find("Player").GetComponent<CharacterStats>();
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")//Cuando colisione contra el player llamará al método para reducir su vida
         {
-            collision.gameObject.GetComponent<HealthManager>().DamageCharacter(damage);
+            //Recalcula el daño a hacer en función de la estadística de defensa del player
+            //asegurándonos de que nunca pueda haber un daño inferior a uno
+            int totalDamage = Mathf.Clamp(damage / stats.defenseLevels[stats.level], 1, 9999);
+
+            //Según la probabilidad de que el ataque falle en función de la
+            //estadística de suerte del player el ataque puede quedarse en cero:
+            if(Random.Range(0, CharacterStats.MAX_STAT_VALUE) < stats.luckLevels[stats.level])
+            {
+                totalDamage = 0;
+            }
+
+
+            collision.gameObject.GetComponent<HealthManager>().DamageCharacter(totalDamage);
 
             //Mostrará un texto con el daño ocasionado
             GameObject clone = Instantiate(CanvasDamage, collision.gameObject.transform.position,
                     Quaternion.Euler(Vector3.zero));
-            clone.GetComponent<DamageNumber>().damagePoints = damage;
+            clone.GetComponent<DamageNumber>().damagePoints = totalDamage;
 
             /*            
             player = collision.gameObject;//Guardamos una referencia al player

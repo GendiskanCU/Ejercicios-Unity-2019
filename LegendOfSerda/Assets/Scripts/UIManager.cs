@@ -10,8 +10,12 @@ public class UIManager : MonoBehaviour
 {
     public Slider playerHealthBar;//Barra de vida del player
     public TextMeshProUGUI playerHealthText;//Info con la vida del player  
-    
-    
+
+    public TextMeshProUGUI playerLevelText;//Info con el nivel del player
+    public Slider playerExpBar;//Barra de experiencia del player    
+
+       
+
     /// <summary>
     /// Actualiza los valores de la barra de vida
     /// </summary>
@@ -27,5 +31,29 @@ public class UIManager : MonoBehaviour
             Append(" / ").Append(maxHealth);
 
         playerHealthText.text = stringBuilder.ToString();
+    }
+
+    /// <summary>
+    /// Actualiza el valor de la barra de experiencia en la UI
+    /// </summary>
+    public void UpdateBarExperience(int experience)
+    {
+        playerExpBar.value = experience;
+    }
+
+
+    /// <summary>
+    /// Actualiza el nivel del player en la UI
+    /// y el valor mínimo/máximo en la barra de experiencia para que muestre
+    /// la cantidad que se debe lograr para subir al siguiente nivel
+    /// </summary>
+    public void UpdateLevel(int level, int newMinExp, int newMaxExp)
+    {
+        StringBuilder stringBuilder = new StringBuilder().Append("Level ").
+            Append(level);
+        playerLevelText.text = stringBuilder.ToString();
+
+        playerExpBar.minValue = newMinExp;
+        playerExpBar.maxValue = newMaxExp;
     }
 }
