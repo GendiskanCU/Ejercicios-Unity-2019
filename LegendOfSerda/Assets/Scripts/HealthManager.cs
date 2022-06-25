@@ -24,6 +24,8 @@ public class HealthManager : MonoBehaviour
 
     private SpriteRenderer _characterRenderer;//Sprite del personaje
 
+    public int expWhenDefeated = 0;//Cantidad de experiencia que dará el character al ser derrotado
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class HealthManager : MonoBehaviour
     public void DamageCharacter(int damage)
     {
         currentHealth -= damage;
+        //Cuando el que haya recibido el daño sera el player
         //Actualiza la información de la barra de vida del player en la UI
         if(gameObject.tag == "Player")
             uiManager.UpdateBarHealth(currentHealth, maxHealth);
@@ -58,11 +61,19 @@ public class HealthManager : MonoBehaviour
         {
             flashActive = true;
             flashCounter = flashLength;//Reinicia el contador de flash
-        }
+        }        
 
-        if (currentHealth <= 0)
-        {
-            gameObject.SetActive(false);
+        //Si el personaje pierde toda la vida y aún sigue activo
+        if (currentHealth <= 0 && gameObject.activeSelf)
+        {            
+            gameObject.SetActive(false);//Lo desactivamos
+            //Cuando el que haya sido vencido sea un enemigo
+            //Aplicará al player el aumento experiencia que otorga
+            if (gameObject.tag == "Enemie")
+            {
+                GameObject.Find("Player").GetComponent<CharacterStats>().
+                    AddExperience(expWhenDefeated);
+            }                      
         }
     }
 

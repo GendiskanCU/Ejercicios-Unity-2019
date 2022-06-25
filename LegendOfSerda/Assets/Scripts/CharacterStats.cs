@@ -37,7 +37,7 @@ public class CharacterStats : MonoBehaviour
         exp += newExp;
 
         //Si se ha alcanzado ya el último nivel, no podrá subir más
-        if (level >= expToLevelUp.Length - 1)
+        if (level >= expToLevelUp.Length)
         {
             return;
         }
