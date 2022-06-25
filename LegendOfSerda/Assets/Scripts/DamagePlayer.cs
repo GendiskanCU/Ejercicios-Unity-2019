@@ -10,7 +10,8 @@ public class DamagePlayer : MonoBehaviour
 
     public GameObject CanvasDamage;//Canvas de texto que aparecerá informando del daño causado
 
-    private CharacterStats stats;//Estadísticas del player, para reducir el daño en función de su defensa actual (que depende de su nivel)
+    private CharacterStats statsPlayer;//Estadísticas del player, para reducir el daño en función de su defensa actual (que depende de su nivel)
+    private CharacterStats stats;//Estadísticas del enemigo, para aumentar el daño en función de su nivel actual
 
     /*
     public float timeToRevivePlayer;//Tiempo que tardará el player en revivir una vez muerto
@@ -24,7 +25,9 @@ public class DamagePlayer : MonoBehaviour
     private void Start()
     {
         //Captura las estadísticas del jugador
-        stats = GameObject.Find("Player").GetComponent<CharacterStats>();
+        statsPlayer = GameObject.Find("Player").GetComponent<CharacterStats>();
+        //Captura las estadísticas del enemigo
+        stats = GetComponent<CharacterStats>();
     }
 
 
@@ -32,13 +35,14 @@ public class DamagePlayer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")//Cuando colisione contra el player llamará al método para reducir su vida
         {
-            //Recalcula el daño a hacer en función de la estadística de defensa del player
+            //Recalcula el daño a hacer en función de la estadística de fuerza del enemigo y de defensa del player
             //asegurándonos de que nunca pueda haber un daño inferior a uno
-            int totalDamage = Mathf.Clamp(damage / stats.defenseLevels[stats.level], 1, 9999);
+            int totalDamage = Mathf.Clamp(damage + stats.strengLevels[stats.level] - statsPlayer.defenseLevels[statsPlayer.level], 1, 9999);
+            //int totalDamage = Mathf.Clamp(damage * (1 - stats.defenseLevels[stats.level] / CharacterStats.MAX_STAT_VALUE), 1, 9999);
 
             //Según la probabilidad de que el ataque falle en función de la
             //estadística de suerte del player el ataque puede quedarse en cero:
-            if(Random.Range(0, CharacterStats.MAX_STAT_VALUE) < stats.luckLevels[stats.level])
+            if(Random.Range(0, CharacterStats.MAX_STAT_VALUE) < statsPlayer.luckLevels[statsPlayer.level])
             {
                 totalDamage = 0;
             }

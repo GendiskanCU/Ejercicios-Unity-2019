@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6591061615914299298}
   - component: {fileID: 5581043190755178476}
   - component: {fileID: -1150765346669764030}
+  - component: {fileID: 6017500754979461981}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemie
@@ -191,3 +192,24 @@ MonoBehaviour:
   flashLength: 0
   flashCounter: 0
   expWhenDefeated: 10
+--- !u!114 &6017500754979461981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447425769996154238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3a818f94aaf54c90b5b06df9ce38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  exp: 0
+  expToLevelUp: 
+  hpLevels: 000000000f0000001400000023000000
+  strengLevels: 00000000000000000200000005000000
+  defenseLevels: 
+  speedLevels: 00000000010000000200000003000000
+  luckLevels: 
+  accuracyLevels: 

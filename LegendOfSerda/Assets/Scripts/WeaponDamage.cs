@@ -32,10 +32,11 @@ public class WeaponDamage : MonoBehaviour
         {
             //Actualiza el daño según el nivel actual del player
             int totalDamage = damage + stats.strengLevels[stats.level];
+            //int totalDamage = damage * (1 + stats.strengLevels[stats.level] / CharacterStats.MAX_STAT_VALUE);
 
             //Según la probabilidad de que el ataque falle en función de la
             //estadística del player el ataque puede quedarse en cero:
-            if (Random.Range(0, CharacterStats.MAX_STAT_VALUE) < stats.accuracyLevels[stats.level])
+            if (Random.Range(0, CharacterStats.MAX_STAT_VALUE) > stats.accuracyLevels[stats.level])
             {
                 totalDamage = 0;
             }
