@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 lastMovement = Vector2.zero;//También se utilizará para saber a dónde mirará el personaje al cargar la escena
 
     public string nextUuid;//Siguiente Start Point en el que deberá situarse cuando cargue la siguiente escena
+
+    public bool canMove = true;//Para permitir, o no, el movimiento del player
     
     
     // Start is called before the first frame update
@@ -48,6 +50,11 @@ public class PlayerController : MonoBehaviour
     {
         walking = false;
 
+        if (!canMove)//Si el movimiento está bloqueado, asegura que se detiene y sale sin hacer nada más
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
 
         //Control del ataque (prevalece sobre el movimiento, por eso se pone antes)
         if (atacking)//Si ya está atacando, descontaremos el tiempo hasta el próximo ataque

@@ -8,6 +8,8 @@ public class DamagePlayer : MonoBehaviour
 {
     public int damage = 1;//Daño que hace el enemigo
 
+    public GameObject CanvasDamage;//Canvas de texto que aparecerá informando del daño causado
+
     /*
     public float timeToRevivePlayer;//Tiempo que tardará el player en revivir una vez muerto
 
@@ -21,6 +23,12 @@ public class DamagePlayer : MonoBehaviour
         if(collision.gameObject.tag == "Player")//Cuando colisione contra el player llamará al método para reducir su vida
         {
             collision.gameObject.GetComponent<HealthManager>().DamageCharacter(damage);
+
+            //Mostrará un texto con el daño ocasionado
+            GameObject clone = Instantiate(CanvasDamage, collision.gameObject.transform.position,
+                    Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<DamageNumber>().damagePoints = damage;
+
             /*            
             player = collision.gameObject;//Guardamos una referencia al player
             player.SetActive(false);//Lo desactivará temporalmente

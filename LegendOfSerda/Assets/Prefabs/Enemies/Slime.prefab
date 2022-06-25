@@ -171,6 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  CanvasDamage: {fileID: 7363600964936464736, guid: a81701fdc9915734faaa060d608426ec,
+    type: 3}
 --- !u!114 &-1150765346669764030
 MonoBehaviour:
   m_ObjectHideFlags: 0
