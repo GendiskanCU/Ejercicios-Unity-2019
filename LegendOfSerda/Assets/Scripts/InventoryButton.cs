@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InventoryButton : MonoBehaviour
 {
     
-    public enum ItemType { WEAPON, ITEM, ARMOR, RING };//Todos los tipos de ítems que puede haber en el inventario
+    public enum ItemType { WEAPON = 0, ITEM = 1, ARMOR = 2, RING = 3 };//Todos los tipos de ítems que puede haber en el inventario
     
     public int itemId;//Indice del ítem asociado al botón
 

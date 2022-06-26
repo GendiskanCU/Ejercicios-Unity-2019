@@ -28,6 +28,9 @@ public class WeaponManager : MonoBehaviour
         {
             weapons[i].SetActive(i == activeWeapon ? true : false);
         }
+
+        //Cambia el icono que representa el arma activa en la UI
+        GameObject.FindObjectOfType<UIManager>().UpdatePlayerAvatar(weapons[activeWeapon]);
     }
 
     /// <summary>
@@ -39,6 +42,9 @@ public class WeaponManager : MonoBehaviour
         weapons[activeWeapon].SetActive(false);
         weapons[newWeapon].SetActive(true);
         activeWeapon = newWeapon;
+
+        //Cambia el icono que representa el arma activa en la UI
+        GameObject.FindObjectOfType<UIManager>().UpdatePlayerAvatar(weapons[activeWeapon]);
     }
 
     /// <summary>

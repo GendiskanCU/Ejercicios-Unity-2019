@@ -15,8 +15,11 @@ public class UIManager : MonoBehaviour
     public Slider playerExpBar;//Barra de experiencia del player    
 
     public GameObject panelInventory;//Panel que contiene el inventario del player
+    public GameObject panelMenu;//Panel que contiene los botones para filtrar el inventario
 
     public Button inventoryButton;//Prefab de botones del inventario
+
+    public Image playerAvatar;//Pequeño icono que aparecerá junto a la barra de vida
 
     /// <summary>
     /// Actualiza los valores de la barra de vida
@@ -33,6 +36,14 @@ public class UIManager : MonoBehaviour
             Append(" / ").Append(maxHealth);
 
         playerHealthText.text = stringBuilder.ToString();
+    }
+
+    /// <summary>
+    /// Actualiza el icono junto a la barra de vida mostrando el arma equipada
+    /// </summary>
+    public void UpdatePlayerAvatar(GameObject equipedWeapon)
+    {
+        playerAvatar.sprite = equipedWeapon.GetComponent<SpriteRenderer>().sprite;
     }
 
     /// <summary>
@@ -65,6 +76,7 @@ public class UIManager : MonoBehaviour
     public void ToggleInventory()
     {
         panelInventory.SetActive(!panelInventory.activeSelf);
+        panelMenu.SetActive(!panelMenu.activeInHierarchy);//activeInHierarchy y activeSelf son similares
 
         //Cuando esté activo se actualizará con el posible nuevo contenido
 
@@ -108,6 +120,34 @@ public class UIManager : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Filtra el inventario para mostrar solo los objetos del tipo especificado
+    /// </summary>
+    /// <param name="type"></param>
+    public void ShowOnly(int type)
+    {
+        //Recorre los hijos del panel de inventario
+        //Y activa solo los que sean del tipo especificado como parámetro
+        foreach(Transform t in panelInventory.transform)
+        {
+            t.gameObject.SetActive((int)t.gameObject.GetComponent<InventoryButton>().type == type);
+        }
+    }
+
+
+    /// <summary>
+    /// Muestra todos los objetos del inventario
+    /// </summary>
+    public void ShowAll()
+    {
+        //Recorre los hijos del panel de inventario y los activa
+        foreach (Transform t in panelInventory.transform)
+        {
+            t.gameObject.SetActive(true);
+        }
+    }
+
     private void Update()
     {
         //Al pulsar la tecla I (aunque también se puede hacer pulsando el botón de la UI)
@@ -115,5 +155,12 @@ public class UIManager : MonoBehaviour
         {
             ToggleInventory();//Muestra/oculta el inventario
         }
+    }
+
+    private void Start()
+    {
+        //Al inicio los paneles del inventario estarán desactivados
+        panelInventory.SetActive(false);
+        panelMenu.SetActive(false);
     }
 }
