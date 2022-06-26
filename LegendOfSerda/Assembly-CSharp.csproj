@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\StartPoint.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WeaponDamage.cs" />
+    <Compile Include="Assets\Scripts\WeaponManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
