@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour
     private List<GameObject> weapons;
 
     public int activeWeapon = 0;//Arma activa
+   
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +35,19 @@ public class WeaponManager : MonoBehaviour
     /// </summary>
     /// <param name="newWeapon"></param>
     public void ChangeWeapon(int newWeapon)
-    {
+    {        
         weapons[activeWeapon].SetActive(false);
         weapons[newWeapon].SetActive(true);
         activeWeapon = newWeapon;
+    }
+
+    /// <summary>
+    /// Devuelve la lista de armas que tenga el player en su inventario (como objetos hijos)
+    /// </summary>
+    /// <returns></returns>
+    public List<GameObject> GetAllWeapons()
+    {
+        return weapons;
     }
     
 }
