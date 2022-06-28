@@ -31,8 +31,9 @@ public class PlayerController : MonoBehaviour
 
     public string nextUuid;//Siguiente Start Point en el que deberá situarse cuando cargue la siguiente escena
 
-    public bool canMove = true;//Para permitir, o no, el movimiento del player   
-    
+    public bool canMove = true;//Para permitir, o no, el movimiento del player mientras dura el efecto de daño (en el HealthManager)
+
+    public bool isTalking = false;//Para controlar si el player está dentro de un diálogo y detener su movimiento o reanudar su movimiento
     
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        walking = false;
+        //Si el player está dialogando, se asegura que detiene su movimiento
+        if (isTalking)
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
+
+        walking = false;        
 
         if (!canMove)//Si el movimiento está bloqueado, asegura que se detiene y sale sin hacer nada más
         {

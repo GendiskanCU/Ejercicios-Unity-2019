@@ -7,6 +7,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
+      propertyPath: npcName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
+      propertyPath: npcSprite
+      value: 
+      objectReference: {fileID: -5498452386917162133, guid: a0806e5b94d283a459d8a24dbd687997,
+        type: 3}
+    - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
+      propertyPath: npcDialogueLines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
+      propertyPath: npcDialogueLines.Array.data[0]
+      value: Estoy esperando a que abran la carcel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
+      propertyPath: npcDialogueLines.Array.data[1]
+      value: Hoy es dia de visita y vengo a ver a mi hermano.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
+      propertyPath: npcDialogueLines.Array.data[2]
+      value: Esta encerrado por haber pegado un cachete al capitan de la guardia
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
+      propertyPath: npcDialogueLines.Array.data[3]
+      value: Ja, ja,  ja! Ese fue un momento memorable!!!
+      objectReference: {fileID: 0}
     - target: {fileID: 1197978298041991395, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
       propertyPath: speed
@@ -35,17 +64,17 @@ PrefabInstance:
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.6100273
       objectReference: {fileID: 0}
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6.2257257
       objectReference: {fileID: 0}
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.852924
       objectReference: {fileID: 0}
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
@@ -55,17 +84,17 @@ PrefabInstance:
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1197978298041991398, guid: 55bb8fbee5d85c344ade802d197d9704,
         type: 3}

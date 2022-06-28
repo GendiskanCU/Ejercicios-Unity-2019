@@ -28,25 +28,41 @@ public class NPCMovement : MonoBehaviour
 
     public BoxCollider2D npcZone;//Zona por la que podrá moverse el NPC
 
+    public bool isTalking = false;//Para controlar si el NPC está en un diálogo, y así poder detener su movimiento
+
+    private DialogueManager dialogueManager;//Para controlar si el NPC ha finalizado de dialogar y así poder reanudar su movimiento
+
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+
+        dialogueManager = FindObjectOfType<DialogueManager>();
         
         waitCounter = waitTime;
         walkCounter = walkTime;
     }
 
     private void FixedUpdate()
-    {
+    {        
+
+        if(isTalking)//Si el NPC está dialogando
+        {            
+            isTalking = dialogueManager.dialogueActive;//Actualiza el valor de la variable cuando el diálogo finalice
+            StopWalking();//Detiene el movimiento del NPC
+            return;
+        }
+        
+
+
         if(isWalking)//Cuando esté caminando
         {
             StayInZone();
 
             //Se aplica la velocidad en la dirección actual (no utiliza deltaTime porque estamos aplicando
             //velocidad a la física, no estamos cambiando directamente la posición)
-            Debug.Log(currentDirection);
+            
             _rigidbody.velocity = walkingDirections[currentDirection] * speed;
             walkCounter -= Time.fixedDeltaTime;
             
