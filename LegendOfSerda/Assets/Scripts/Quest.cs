@@ -25,6 +25,8 @@ public class Quest : MonoBehaviour
     public List<int> numberOfEnemies;//Número de enemigos de cada tipo que deban ser eliminados
 
     private QuestManager questManager;//Acceso al manager de misiones
+
+    public Quest nextQuest;//Próxima que se activará cuando se complete la actual, si procede
     
     
     /// <summary>
@@ -39,6 +41,7 @@ public class Quest : MonoBehaviour
 
     /// <summary>
     /// Da por finalizada la misión, mostrando el texto final y la desactiva
+    /// Activa la siguiente misión, si es que existe
     /// </summary>
     public void CompleteQuest()
     {
@@ -48,6 +51,21 @@ public class Quest : MonoBehaviour
 
         questCompleted = true;
         gameObject.SetActive(false);
+
+        if (nextQuest != null)
+        {
+            Invoke("ActivateNextQuest", 5.0f);
+        }
+    }
+
+
+    /// <summary>
+    /// Activa e inicia la siguiente Quest
+    /// </summary>
+    public void ActivateNextQuest()
+    {
+        nextQuest.gameObject.SetActive(true);
+        nextQuest.StartQuest();
     }
 
     private void Update()

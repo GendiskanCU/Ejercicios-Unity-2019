@@ -303,105 +303,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93765585}
   m_CullTransparentMesh: 0
---- !u!1001 &97271236
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 766253324}
-    m_Modifications:
-    - target: {fileID: 9162751955428426650, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: questID
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426650, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: startPoint
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426653, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 4.6572323
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426653, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.7856407
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426653, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.35966015
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426653, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0347023
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162751955428426655, guid: 61dc7f102047bf74d98ebaef328b42f9,
-        type: 3}
-      propertyPath: m_Name
-      value: Quest1Start
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 61dc7f102047bf74d98ebaef328b42f9, type: 3}
+--- !u!114 &103827208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3244538184063138325, guid: 45dfbeefc6e1c0546ad3db5bc95dea0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1477290782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9e7740d98df4c41a2c8598078a8170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &127539953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3096963037505935525, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
@@ -11709,7 +11622,7 @@ PrefabInstance:
     - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
         type: 3}
@@ -12065,7 +11978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
       propertyPath: npcDialogueLines.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1497517589, guid: 55bb8fbee5d85c344ade802d197d9704, type: 3}
       propertyPath: npcDialogueLines.Array.data[0]
@@ -12772,12 +12685,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &596516680 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 97271236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637685187
 GameObject:
   m_ObjectHideFlags: 0
@@ -13248,7 +13155,6 @@ Transform:
   m_Children:
   - {fileID: 1487034642}
   - {fileID: 787397234}
-  - {fileID: 596516680}
   - {fileID: 1700130596}
   - {fileID: 78825462}
   m_Father: {fileID: 0}
@@ -17004,6 +16910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3244538184063138325, guid: 45dfbeefc6e1c0546ad3db5bc95dea0c,
         type: 3}
+      propertyPath: nextQuest
+      value: 
+      objectReference: {fileID: 103827208}
+    - target: {fileID: 3244538184063138325, guid: 45dfbeefc6e1c0546ad3db5bc95dea0c,
+        type: 3}
       propertyPath: startText
       value: Limpia de flanes las cercanias del castillo
       objectReference: {fileID: 0}
@@ -17334,7 +17245,7 @@ PrefabInstance:
     - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9162751955428426652, guid: 61dc7f102047bf74d98ebaef328b42f9,
         type: 3}
