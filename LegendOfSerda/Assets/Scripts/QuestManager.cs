@@ -10,6 +10,8 @@ public class QuestManager : MonoBehaviour
 
     private DialogueManager dialogueManager;//Para poder mostrar la información de las misiones
 
+    public QuestItem itemCollected;//Último item que ha sido recolectado en las misiones que los tengan
+
     // Start is called before the first frame update
     void Start()
     {
