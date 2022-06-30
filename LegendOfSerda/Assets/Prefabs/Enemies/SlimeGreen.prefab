@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.35851243
       objectReference: {fileID: 0}
+    - target: {fileID: 5470877132060083180, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: enemyName
+      value: GreenSlime
+      objectReference: {fileID: 0}
     - target: {fileID: 6591061615914299298, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
         type: 3}
       propertyPath: speed

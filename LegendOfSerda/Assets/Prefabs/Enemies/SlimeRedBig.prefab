@@ -102,6 +102,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8773585
       objectReference: {fileID: 0}
+    - target: {fileID: 5470877132060083180, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: enemyName
+      value: BigRedSlime
+      objectReference: {fileID: 0}
     - target: {fileID: 5581043190755178476, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
         type: 3}
       propertyPath: damage

@@ -19,12 +19,14 @@ public class Quest : MonoBehaviour
     public bool needsItem;//True si la misión requiere recolectar items
     public List <QuestItem> itemsNeeded;//Lista de items que pueda tener la misión
 
+
+    public bool killsEnemy;//True si la misión requiere matar un número de enemigos
+    public List<QuestEnemy> enemies;//Lista de enemigos a eliminar que pueda tener la misión
+    public List<int> numberOfEnemies;//Número de enemigos de cada tipo que deban ser eliminados
+
     private QuestManager questManager;//Acceso al manager de misiones
     
-
-   
     
-
     /// <summary>
     /// Inicia la misión mostrando la información inicial
     /// </summary>
@@ -69,6 +71,40 @@ public class Quest : MonoBehaviour
             //Por lo que la misión se da por completada
             if (itemsNeeded.Count <= 0)
                 CompleteQuest();
+        }
+
+
+        //Si la misión consiste en eliminar enemigos y en el manager ya se ha indicado que se ha eliminado alguno
+        if(killsEnemy && questManager.enemyKilled != null)
+        {
+            //Comprueba el que ha sido eliminado es del tipo de los que están en la lista de enemigos a eliminar
+            for(int i = 0; i < enemies.Count; i++)
+            {
+                if(enemies[i].enemyName == questManager.enemyKilled.enemyName)
+                {
+                    //En cuyo caso se resta el número de enemigos de ese tipo a eliminar para completar la misión
+                    numberOfEnemies[i]--;
+                    //Y también se "limpia" del manager de misiones
+                    questManager.enemyKilled = null;                   
+
+                    //Se comprueba si quedan enemigos de ese tipo por eliminar para completar la misión
+                    if(numberOfEnemies[i] <= 0)
+                    {
+                        //En cuyo caso se eliminan de la lista de enemigos a eliminar
+                        enemies.RemoveAt(i);
+                        numberOfEnemies.RemoveAt(i);
+                    }
+
+                    break;
+                }
+            }
+
+            //Cuando ya no queden enemigos por matar de ningún tipo, la lista de enemigos estará vacía
+            //Por lo que la misión se da por completada
+            if(enemies.Count <= 0)
+            {
+                CompleteQuest();
+            }
         }
     }
 }

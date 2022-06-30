@@ -12,6 +12,8 @@ public class QuestManager : MonoBehaviour
 
     public QuestItem itemCollected;//Último item que ha sido recolectado en las misiones que los tengan
 
+    public QuestEnemy enemyKilled;//Último enemigo que haya sido eliminado en las misiones de eliminar enemigos
+
     // Start is called before the first frame update
     void Start()
     {

@@ -26,6 +26,10 @@ public class HealthManager : MonoBehaviour
 
     public int expWhenDefeated = 0;//Cantidad de experiencia que dará el character al ser derrotado
 
+    //Para utilizar por los enemigos de las misiones de eliminar enemigos
+    private QuestEnemy quest;
+    private QuestManager questManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,9 @@ public class HealthManager : MonoBehaviour
         //Actualiza la información de la barra de vida del player en la UI
         if (gameObject.tag == "Player")
             uiManager.UpdateBarHealth(currentHealth, maxHealth);
+
+        quest = GetComponent<QuestEnemy>();
+        questManager = FindObjectOfType<QuestManager>();
     }
     
 
@@ -69,10 +76,13 @@ public class HealthManager : MonoBehaviour
             gameObject.SetActive(false);//Lo desactivamos
             //Cuando el que haya sido vencido sea un enemigo
             //Aplicará al player el aumento experiencia que otorga
+            //E informará al manager de misiones de que se ha eliminado a este enemigo
             if (gameObject.tag == "Enemie")
             {
                 GameObject.Find("Player").GetComponent<CharacterStats>().
                     AddExperience(expWhenDefeated);
+
+                questManager.enemyKilled = quest;
             }                      
         }
     }
