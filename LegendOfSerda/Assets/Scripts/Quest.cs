@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Gestiona una misión concreta
 
@@ -21,7 +22,7 @@ public class Quest : MonoBehaviour
 
 
     public bool killsEnemy;//True si la misión requiere matar un número de enemigos
-    public List<QuestEnemy> enemies;//Lista de enemigos a eliminar que pueda tener la misión
+    public List<QuestEnemy> enemies;//Lista de TIPOS de enemigos a eliminar que pueda tener la misión
     public List<int> numberOfEnemies;//Número de enemigos de cada tipo que deban ser eliminados
 
     private QuestManager questManager;//Acceso al manager de misiones
@@ -35,7 +36,17 @@ public class Quest : MonoBehaviour
     public void StartQuest()
     {
         questManager = FindObjectOfType<QuestManager>();//Captura el questManager
-        questManager.ShowTextQuest(title + "\n" + startText);
+        questManager.ShowTextQuest(title + "\n" + startText);//Muestra el texto de la misión
+
+        if(needsItem)//Cuando la misión necesite recolectar items
+        {
+            ActivateItems();
+        }
+
+        if (killsEnemy)//Cuando la misión necesite eliminar enemigos
+        {
+            ActivateEnemies();
+        }
     }
 
 
@@ -55,6 +66,35 @@ public class Quest : MonoBehaviour
         if (nextQuest != null)
         {
             Invoke("ActivateNextQuest", 5.0f);
+        }
+    }
+
+
+    /// <summary>
+    /// Activa todos los enemigos que pertenezcan a una misión de eliminar enemigos
+    /// </summary>
+    private void ActivateEnemies()
+    {        
+        Object[] enemiesQ = Resources.FindObjectsOfTypeAll<QuestEnemy>();//Busca todos los enemigos por la escena, incluso los desactivados
+        
+        foreach(QuestEnemy enemy in enemiesQ)
+        {
+            if (enemy.questID == questID)//Y aquellos que pertenezcan a esta misión
+                enemy.gameObject.SetActive(true);//Se activan para que aparezcan en la escena
+        }
+    }
+
+
+    /// <summary>
+    /// Activa todos los items que pertenezcan a una misión de encontrar items
+    /// </summary>
+    private void ActivateItems()
+    {
+        Object[] items = Resources.FindObjectsOfTypeAll<QuestItem>();//Busca todos los items por la escena, incluso los desactivados
+        foreach(QuestItem item in items)
+        {
+            if (item.questID == questID)//Y aquellos que pertenezcan a esta misión
+                item.gameObject.SetActive(true);//Se activan para que aparezcan en la escena
         }
     }
 
@@ -95,11 +135,16 @@ public class Quest : MonoBehaviour
         //Si la misión consiste en eliminar enemigos y en el manager ya se ha indicado que se ha eliminado alguno
         if(killsEnemy && questManager.enemyKilled != null)
         {
+            Debug.Log("Entra al principio del bloque if");
+            Debug.Log("Cantidad de enemigos: " + enemies.Count);
             //Comprueba el que ha sido eliminado es del tipo de los que están en la lista de enemigos a eliminar
             for(int i = 0; i < enemies.Count; i++)
             {
+                Debug.Log("Entra al principio del bloque for");
+                Debug.Log("Nombre enemigo lista: " + enemies[i].enemyName + "\nNombre enemigo eliminado: " + questManager.enemyKilled.enemyName);
                 if(enemies[i].enemyName == questManager.enemyKilled.enemyName)
                 {
+                    Debug.Log("Resta un enemigo");
                     //En cuyo caso se resta el número de enemigos de ese tipo a eliminar para completar la misión
                     numberOfEnemies[i]--;
                     //Y también se "limpia" del manager de misiones
@@ -125,4 +170,36 @@ public class Quest : MonoBehaviour
             }
         }
     }
+
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+
+    
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //Cada vez que se cargue un nivel (escena) de nuevo, y esta quest esté activa (si no este método no llegará a ejecutarse)
+        //Se comprueba si la misión necesita items o enemigos para activarlos.
+
+        if (needsItem)//Cuando la misión necesite recolectar items
+        {
+            ActivateItems();
+        }
+
+        if (killsEnemy)//Cuando la misión necesite eliminar enemigos
+        {
+            Debug.Log("Activando enemigos al cargar la escena");
+            ActivateEnemies();
+        }
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
 }

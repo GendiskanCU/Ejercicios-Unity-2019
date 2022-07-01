@@ -67430,6 +67430,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1447425769996154238, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3096963037505935525, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
         type: 3}
       propertyPath: m_RootOrder
@@ -67484,6 +67489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470877132060083180, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: questID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0, type: 3}
@@ -67588,6 +67598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 1447425769996154238, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3096963037505935525, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
         type: 3}
       propertyPath: m_RootOrder
@@ -67642,6 +67657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470877132060083180, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: questID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0, type: 3}
@@ -77325,6 +77345,11 @@ PrefabInstance:
       propertyPath: expWhenDefeated
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 3648456983389702310, guid: e3f6f61d84d6f314e801d5fff89301a7,
+        type: 3}
+      propertyPath: questID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6032297882437882863, guid: e3f6f61d84d6f314e801d5fff89301a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -77385,6 +77410,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeGreen (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7880124650189930036, guid: e3f6f61d84d6f314e801d5fff89301a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3f6f61d84d6f314e801d5fff89301a7, type: 3}
 --- !u!1001 &935989202
@@ -77403,6 +77433,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Slime (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447425769996154238, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3096963037505935525, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
         type: 3}
@@ -77459,6 +77494,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5470877132060083180, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: questID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0, type: 3}
 --- !u!1001 &1117496364
@@ -77468,6 +77508,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 833039578}
     m_Modifications:
+    - target: {fileID: 262883883859920063, guid: f283b086d8db36d48bad1a3f2d2092b8,
+        type: 3}
+      propertyPath: questID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4057232782759421201, guid: f283b086d8db36d48bad1a3f2d2092b8,
         type: 3}
       propertyPath: expWhenDefeated
@@ -77477,6 +77522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeRedBig
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656263806064751149, guid: f283b086d8db36d48bad1a3f2d2092b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7112056559803621366, guid: f283b086d8db36d48bad1a3f2d2092b8,
         type: 3}
@@ -77547,6 +77597,11 @@ PrefabInstance:
       propertyPath: expWhenDefeated
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 3648456983389702310, guid: e3f6f61d84d6f314e801d5fff89301a7,
+        type: 3}
+      propertyPath: questID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6032297882437882863, guid: e3f6f61d84d6f314e801d5fff89301a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -77606,6 +77661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeGreen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880124650189930036, guid: e3f6f61d84d6f314e801d5fff89301a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3f6f61d84d6f314e801d5fff89301a7, type: 3}
@@ -81196,6 +81256,11 @@ PrefabInstance:
       propertyPath: expWhenDefeated
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 3648456983389702310, guid: e3f6f61d84d6f314e801d5fff89301a7,
+        type: 3}
+      propertyPath: questID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6032297882437882863, guid: e3f6f61d84d6f314e801d5fff89301a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -81255,6 +81320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880124650189930036, guid: e3f6f61d84d6f314e801d5fff89301a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3f6f61d84d6f314e801d5fff89301a7, type: 3}
@@ -81420,6 +81490,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1447425769996154238, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3096963037505935525, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
         type: 3}
       propertyPath: m_RootOrder
@@ -81474,6 +81549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470877132060083180, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0,
+        type: 3}
+      propertyPath: questID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1822a6d9c910fe4a88fe87d8b5fc3d0, type: 3}

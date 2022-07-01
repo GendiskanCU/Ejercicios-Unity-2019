@@ -66,7 +66,7 @@ public class QuestTrigger : MonoBehaviour
                         //Arranca la misión, siempre que no esté ya iniciada
                         if(!newQuest.gameObject.activeInHierarchy)
                         {
-                            Debug.Log("Misión activada");
+                            //Debug.Log("Misión activada");
                             newQuest.gameObject.SetActive(true);
                             newQuest.StartQuest();
                         }

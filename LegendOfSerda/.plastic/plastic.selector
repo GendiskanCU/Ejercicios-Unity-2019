@@ -1,0 +1,4 @@
+repository "LegendOfSerda@Gendiskan_Test@cloud"
+  path "/"
+    br "/main"
+    co "/main"

@@ -9,6 +9,7 @@ public class QuestEnemy : MonoBehaviour
 {
 
     public string enemyName;//Nombre o tipo de enemigo
+    public int questID;//Identificador de la misión a la que pertenece el enemigo
 
     // Start is called before the first frame update
     void Start()
