@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour
 
 
     /// <summary>
-    /// Rellena el panel de inventario de la UI con las armas que tenga el player
+    /// Rellena el panel de inventario de la UI con las armas, items de misión que tenga el player
     /// </summary>
     public void FillInventory()
     {
@@ -106,18 +106,46 @@ public class UIManager : MonoBehaviour
         //Añade como hijos al panel del inventario un botón por cada arma
         foreach(GameObject weapon in weaponsInventory)
         {
-            Button newButton = Instantiate(inventoryButton, panelInventory.transform);
-            //A cada botón se le asigna el método que se deberá ejecutar al pulsarlo
-            //Como el hacer click es un evento, hay que utilizar un delegado:
-
-            newButton.GetComponent<InventoryButton>().itemId = i;
-            newButton.GetComponent<InventoryButton>().type = InventoryButton.ItemType.WEAPON;
-            newButton.onClick.AddListener( () =>  newButton.GetComponent<InventoryButton>().ActivateButton() );
+            AddItemToInventory(weapon, InventoryButton.ItemType.WEAPON, i);
             i++;
-            
-            //Y se le asigna la imagen que corresponda a cada arma
-            newButton.image.sprite = weapon.GetComponent<SpriteRenderer>().sprite;
         }
+
+
+        //Obtiene la lista de items de misión que tenga el player
+
+        ItemsManager itemsManager = FindObjectOfType<ItemsManager>();
+
+        List<GameObject> questItems = itemsManager.GetQuestItems();
+
+        int j = 0;
+        //Añade como hijos al panel del inventario un botón por cada item de misión
+        foreach(GameObject it in questItems)
+        {
+            AddItemToInventory(it, InventoryButton.ItemType.SPECIAL_ITEMS, j);
+            j++;
+        }
+    }
+
+
+    /// <summary>
+    /// Añade como hijo al panel del inventario un botón correspondiente al item recibido
+    /// </summary>
+    /// <param name="newItem"></param>
+    /// <param name="typeItem"></param>
+    /// <param name="position"></param>
+    private void AddItemToInventory(GameObject newItem, InventoryButton.ItemType typeItem, int position)
+    {
+        Button newButton = Instantiate(inventoryButton, panelInventory.transform);
+
+        //A cada botón se le asigna el método que se deberá ejecutar al pulsarlo
+        //Como el hacer click es un evento, hay que utilizar un delegado:
+
+        newButton.GetComponent<InventoryButton>().itemId = position;
+        newButton.GetComponent<InventoryButton>().type = typeItem;
+        newButton.onClick.AddListener(() => newButton.GetComponent<InventoryButton>().ActivateButton());        
+
+        //Y se le asigna la imagen que corresponda a cada arma
+        newButton.image.sprite = newItem.GetComponent<SpriteRenderer>().sprite;
     }
 
 
