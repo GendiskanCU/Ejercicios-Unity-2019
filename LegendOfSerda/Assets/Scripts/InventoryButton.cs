@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InventoryButton : MonoBehaviour
 {
     
-    public enum ItemType { WEAPON = 0, ITEM = 1, ARMOR = 2, RING = 3, SPECIAL_ITEMS = 4 };//Todos los tipos de ítems que puede haber en el inventario
+    public enum ItemType { WEAPON = 0, ITEM = 1, ARMOR = 2, RING = 3 };//Todos los tipos de ítems que puede haber en el inventario
     
     public int itemId;//Indice del ítem asociado al botón
 
@@ -32,10 +32,6 @@ public class InventoryButton : MonoBehaviour
                 break;
             case ItemType.RING:
                 Debug.Log("Equipa el anillo seleccionado");
-                break;
-            case ItemType.SPECIAL_ITEMS:                
-                QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemId);
-                Debug.Log("Item especial de misión: " + item.itemName);
                 break;
         }
     }

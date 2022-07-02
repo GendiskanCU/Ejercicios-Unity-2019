@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\GoToNewPlace.cs" />
     <Compile Include="Assets\Scripts\HealthManager.cs" />
     <Compile Include="Assets\Scripts\InventoryButton.cs" />
-    <Compile Include="Assets\Scripts\ItemsManager.cs" />
     <Compile Include="Assets\Scripts\NPCDialogue.cs" />
     <Compile Include="Assets\Scripts\NPCMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

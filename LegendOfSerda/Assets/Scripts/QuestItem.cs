@@ -11,8 +11,6 @@ public class QuestItem : MonoBehaviour
 
     private QuestManager questManager;//Para acceder al manager de misiones
 
-    private ItemsManager itemsManager;//Para acceder al manager de misiones
-
     public string itemName;//Nombre del item
 
     
@@ -23,8 +21,6 @@ public class QuestItem : MonoBehaviour
         {
             //Captura el manager de quests
             questManager = FindObjectOfType<QuestManager>();
-            //Captura el manager de items
-            itemsManager = FindObjectOfType<ItemsManager>();
 
             //Busca la quest con el Id correspondiente
             Quest newQuest = questManager.QuestWithID(questID);
@@ -38,11 +34,8 @@ public class QuestItem : MonoBehaviour
             //Solo si la misión correspondiente está activa/sin finalizar recoger el item tendrá efecto
             if (newQuest.gameObject.activeInHierarchy && !newQuest.questCompleted)
             {
-                //Notifica al manager de misiones que el item ha sido recogido
+                //Notifica al manager que el item ha sido recogido
                 questManager.itemCollected = this;
-                //Añade en el manager de items el item recogido a la lista de items
-                itemsManager.AddQuestItem(this.gameObject);
-                //Hace desaparacer el item de la escena
                 gameObject.SetActive(false);
             }
 
