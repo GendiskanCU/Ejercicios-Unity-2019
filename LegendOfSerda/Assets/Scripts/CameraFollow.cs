@@ -14,19 +14,29 @@ public class CameraFollow : MonoBehaviour
 
 
     //Variables que se utilizan para que la cámara no se "salga" de los límites del escenario
-    private Camera theCamera;//La propia cámara
-    private BoxCollider2D cameraLimits;//Límites del escenario, definidos por un objeto en la escena que tiene un collider trigger que ocupa el espacio que se debe ver
+    private Camera theCamera;//La propia cámara    
     private Vector3 minLimits, maxLimits;//Límites mínimos y máximos
     private float halfHeight, halfWidth;//Para calcular la mitad de la altura y la altura que la cámara muestra
 
     // Start is called before the first frame update
     void Start()
     {
-        //Captura el collider que define los límites del escenario
-        cameraLimits = GameObject.Find("CameraLimits").GetComponent<BoxCollider2D>();
+        
+    }
+
+
+    /// <summary>
+    /// Cambia los límites de movimiento de la cámara. Se utilizará en cada cambio de escena
+    /// para que se actualicen los mismos según el límite establecido en cada escenario
+    /// 
+    /// </summary>
+    /// <param name="limits">Límites del escenario, definidos por un objeto en la escena que tiene un collider trigger que ocupa el espacio que se debe ver</param>
+    public void ChangeLimits(BoxCollider2D limits)
+    {
+        //Captura el collider que define los límites del escenario       
         //De esos límites, se averigua con el mínimo y el máximo
-        minLimits = cameraLimits.bounds.min;
-        maxLimits = cameraLimits.bounds.max;
+        minLimits = limits.bounds.min;
+        maxLimits = limits.bounds.max;
         //Captura la propia cámara
         theCamera = GetComponent<Camera>();
 
@@ -39,9 +49,6 @@ public class CameraFollow : MonoBehaviour
         //con una simple regla de tres:
         halfWidth = halfHeight * Screen.width / Screen.height;
     }
-
-
-
 
     // Update is called once per frame
     void Update()

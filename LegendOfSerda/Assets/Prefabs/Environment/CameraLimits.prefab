@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8343247099738227252}
   - component: {fileID: 8343247099738227253}
+  - component: {fileID: 923559141846988039}
   m_Layer: 0
   m_Name: CameraLimits
   m_TagString: Untagged
@@ -57,3 +58,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 79.399704, y: 39.729355}
   m_EdgeRadius: 0
+--- !u!114 &923559141846988039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343247099738227255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7d3c23741680145a0b9ea2b2e99e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
