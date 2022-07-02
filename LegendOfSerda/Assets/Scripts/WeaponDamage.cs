@@ -9,6 +9,8 @@ public class WeaponDamage : MonoBehaviour
     [Tooltip("Cantidad de daño que hace el arma")]
     public int damage; //Daño inicial del arma
 
+    public string weaponName;//Nombre del arma
+
     public GameObject bloodAnim;//Efecto de partículas de sangre al golpear a un enemigo
 
     public GameObject CanvasDamage;//Canvas de texto que aparecerá informando del daño causado

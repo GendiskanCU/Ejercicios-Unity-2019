@@ -16,7 +16,7 @@ public class HealthManager : MonoBehaviour
     }
 
 
-    private UIManager uiManager;//Manager del UI (Canvas)
+    public UIManager uiManager;//Manager del UI (Canvas)
 
     public bool flashActive;//Para controlar si el efecto de sufrir daño está activa
     public float flashLength;//Duración del efecto de sufrir daño
@@ -35,7 +35,7 @@ public class HealthManager : MonoBehaviour
     {
         _characterRenderer = GetComponent<SpriteRenderer>();
 
-        uiManager = GameObject.Find("GameCanvas").GetComponent<UIManager>();
+        //uiManager = GameObject.Find("GameCanvas").GetComponent<UIManager>();
 
         currentHealth = maxHealth;//Al iniciar, el player comienza con la vida máxima inicial
 

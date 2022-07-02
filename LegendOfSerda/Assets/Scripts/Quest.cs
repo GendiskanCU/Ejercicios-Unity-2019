@@ -134,17 +134,12 @@ public class Quest : MonoBehaviour
 
         //Si la misión consiste en eliminar enemigos y en el manager ya se ha indicado que se ha eliminado alguno
         if(killsEnemy && questManager.enemyKilled != null)
-        {
-            Debug.Log("Entra al principio del bloque if");
-            Debug.Log("Cantidad de enemigos: " + enemies.Count);
+        {            
             //Comprueba el que ha sido eliminado es del tipo de los que están en la lista de enemigos a eliminar
             for(int i = 0; i < enemies.Count; i++)
-            {
-                Debug.Log("Entra al principio del bloque for");
-                Debug.Log("Nombre enemigo lista: " + enemies[i].enemyName + "\nNombre enemigo eliminado: " + questManager.enemyKilled.enemyName);
+            {                
                 if(enemies[i].enemyName == questManager.enemyKilled.enemyName)
-                {
-                    Debug.Log("Resta un enemigo");
+                {                    
                     //En cuyo caso se resta el número de enemigos de ese tipo a eliminar para completar la misión
                     numberOfEnemies[i]--;
                     //Y también se "limpia" del manager de misiones
@@ -192,7 +187,7 @@ public class Quest : MonoBehaviour
 
         if (killsEnemy)//Cuando la misión necesite eliminar enemigos
         {
-            Debug.Log("Activando enemigos al cargar la escena");
+            //Debug.Log("Activando enemigos al cargar la escena");
             ActivateEnemies();
         }
     }

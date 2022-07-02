@@ -55,5 +55,17 @@ public class WeaponManager : MonoBehaviour
     {
         return weapons;
     }
+
+
+    /// <summary>
+    /// Devuelve el WeaponDamage del arma concreta en la posición especificada
+    /// Para poder utilizar las propiedades del arma (su nombre, daño,...)
+    /// </summary>
+    /// <param name="pos"></param>
+    /// <returns></returns>
+    public WeaponDamage GetWeaponAt(int pos)
+    {
+        return weapons[pos].GetComponent<WeaponDamage>();
+    }
     
 }
