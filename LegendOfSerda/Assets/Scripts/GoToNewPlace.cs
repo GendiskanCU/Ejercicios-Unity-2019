@@ -26,6 +26,8 @@ public class GoToNewPlace : MonoBehaviour
         if (collision.gameObject.tag == "Player" &&
            (needsClick && Input.GetMouseButton(0)))
         {
+            //Reproduce un sonido para enfatizar el cambio de escena
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.KNOCK);
             Teleport();            
         }
     }

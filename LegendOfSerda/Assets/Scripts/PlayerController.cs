@@ -78,6 +78,9 @@ public class PlayerController : MonoBehaviour
         {            
             if (Input.GetMouseButtonDown(0))
             {
+                //Reproduce el sonido de ataque
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.ATTACK);
+
                 atacking = true;
                 attackTimeCounter = attackTime;//Reinicia el contador de tiempo de duración del ataque
 

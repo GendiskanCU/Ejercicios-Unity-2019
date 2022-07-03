@@ -47,6 +47,9 @@ public class Quest : MonoBehaviour
         {
             ActivateEnemies();
         }
+
+        //Reproduce el sonido de inicio de misión
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.M_START);
     }
 
 
@@ -56,6 +59,8 @@ public class Quest : MonoBehaviour
     /// </summary>
     public void CompleteQuest()
     {
+        //Reproduce el sonido de fin de misión
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.M_END);
         questManager = FindObjectOfType<QuestManager>();//Captura el questManager
 
         questManager.ShowTextQuest(title + "\n" + completedText);

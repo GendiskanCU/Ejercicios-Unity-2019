@@ -55,6 +55,9 @@ public class HealthManager : MonoBehaviour
     /// <param name="damage">cantidad de vida a reducir</param>
     public void DamageCharacter(int damage)
     {
+        //Reproduce el sonido de daño
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
+
         currentHealth -= damage;
         //Cuando el que haya recibido el daño sera el player
         //Actualiza la información de la barra de vida del player en la UI
@@ -83,8 +86,15 @@ public class HealthManager : MonoBehaviour
                     AddExperience(expWhenDefeated);
 
                 questManager.enemyKilled = quest;
-            }                      
-        }
+            }
+            //Cuando el que haya sido vencido sea el player
+            //Reproducirá el sonido de muerte
+            if(gameObject.tag == "Player")
+            {
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
+                //TODO: Implementar Game Over
+            }
+        }        
     }
 
     /// <summary>

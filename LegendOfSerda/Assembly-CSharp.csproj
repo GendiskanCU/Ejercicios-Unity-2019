@@ -77,6 +77,8 @@
     <Compile Include="Assets\Scripts\QuestItem.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
     <Compile Include="Assets\Scripts\QuestTrigger.cs" />
+    <Compile Include="Assets\Scripts\SFXManager.cs" />
+    <Compile Include="Assets\Scripts\SFXType.cs" />
     <Compile Include="Assets\Scripts\StartPoint.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WeaponDamage.cs" />
