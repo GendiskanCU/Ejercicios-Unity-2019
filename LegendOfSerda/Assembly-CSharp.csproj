@@ -71,6 +71,8 @@
     <Compile Include="Assets\Scripts\HealthManager.cs" />
     <Compile Include="Assets\Scripts\InventoryButton.cs" />
     <Compile Include="Assets\Scripts\ItemsManager.cs" />
+    <Compile Include="Assets\Scripts\Money.cs" />
+    <Compile Include="Assets\Scripts\MoneyManager.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\NPCDialogue.cs" />
     <Compile Include="Assets\Scripts\NPCMovement.cs" />
