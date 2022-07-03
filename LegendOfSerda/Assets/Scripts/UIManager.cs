@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
 
         //Actualiza el texto que aparece en la barra de vida
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.Append("HP: ").Append(currentHealth).
+        stringBuilder.Append("HP: ").Append(currentHealth >= 0 ? currentHealth : 0).
             Append(" / ").Append(maxHealth);
 
         playerHealthText.text = stringBuilder.ToString();

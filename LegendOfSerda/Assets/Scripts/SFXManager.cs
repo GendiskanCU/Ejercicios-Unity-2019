@@ -32,7 +32,11 @@ public class SFXManager : MonoBehaviour
     private void Start()
     {
         audios = new List<GameObject>();
-        foreach(Transform child in transform)
+
+        //Busca todos los sonidos en la escena y los vuelca en la lista de sonidos
+        GameObject sounds = GameObject.Find("SFX");
+
+        foreach(Transform child in sounds.transform)
         {
             audios.Add(child.gameObject);
         }
