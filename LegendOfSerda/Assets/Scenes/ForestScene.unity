@@ -81343,6 +81343,11 @@ PrefabInstance:
       propertyPath: playOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3276556332657322538, guid: 7f1b06b258dd3e0459ea6edff55cc50c,
+        type: 3}
+      propertyPath: previousTrackID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3276556332657322539, guid: 7f1b06b258dd3e0459ea6edff55cc50c,
         type: 3}
       propertyPath: m_RootOrder
@@ -81822,7 +81827,7 @@ PrefabInstance:
     - target: {fileID: 3276556332657322538, guid: 7f1b06b258dd3e0459ea6edff55cc50c,
         type: 3}
       propertyPath: newTrackID
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3276556332657322538, guid: 7f1b06b258dd3e0459ea6edff55cc50c,
         type: 3}
